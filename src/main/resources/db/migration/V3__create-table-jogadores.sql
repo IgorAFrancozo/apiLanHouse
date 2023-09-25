@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS jogadores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dataNascimento DATE NOT NULL,
+    nickname VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
