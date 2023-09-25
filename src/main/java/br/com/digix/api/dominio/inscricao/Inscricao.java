@@ -3,10 +3,10 @@ package br.com.digix.api.dominio.inscricao;
 import br.com.digix.api.dominio.jogador.Jogador;
 import br.com.digix.api.dominio.partida.Partida;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-@Data
+@Getter
 @Table(name = "inscricoes")
 @Entity(name = "Inscricao")
 @EqualsAndHashCode(of = "id")

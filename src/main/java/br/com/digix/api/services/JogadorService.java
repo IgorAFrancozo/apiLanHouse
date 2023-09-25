@@ -7,8 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class JogadorService extends BaseService<Jogador> {
 
@@ -23,10 +21,10 @@ public class JogadorService extends BaseService<Jogador> {
 
     @Override
     public void adicionar(Jogador jogador) {
-        if (validarJogador.validarIdade(jogador) && validarJogador.validarNicknameUnico(jogador)) {
-            jogadorRepository.save(jogador);
-        } else {
+        if (!validarJogador.validarIdade(jogador) && !validarJogador.validarNicknameUnico(jogador)) {
             throw new IllegalArgumentException("O jogador não atende aos critérios de idade ou o nickname não é único.");
+        } else {
+            jogadorRepository.save(jogador);
         }
     }
 

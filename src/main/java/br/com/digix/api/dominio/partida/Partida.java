@@ -3,13 +3,13 @@ package br.com.digix.api.dominio.partida;
 import br.com.digix.api.dominio.jogador.Jogador;
 import br.com.digix.api.dominio.jogo.Jogo;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@Getter
 @Table(name = "partidas")
 @Entity(name = "Partida")
 @EqualsAndHashCode(of = "id")
@@ -36,5 +36,7 @@ public class Partida {
     private LocalDateTime horarioFimProgramado;
     private LocalDateTime horarioInicioReal;
     private LocalDateTime horarioFimReal;
+    @ManyToOne
+    @JoinColumn(name = "vencedor_id")
     private Jogador vencedor;
 }

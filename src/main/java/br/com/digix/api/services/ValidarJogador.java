@@ -3,12 +3,18 @@ package br.com.digix.api.services;
 import br.com.digix.api.dominio.jogador.Jogador;
 import br.com.digix.api.dominio.jogador.JogadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Service
 public class ValidarJogador {
-    @Autowired
     JogadorRepository jogadorRepository;
+
+    @Autowired
+    public ValidarJogador(JogadorRepository jogadorRepository) {
+        this.jogadorRepository = jogadorRepository;
+    }
 
     public boolean validarIdade(Jogador jogador) {
         return jogador.getIdadeDoJogador() > 14;
