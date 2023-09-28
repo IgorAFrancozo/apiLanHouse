@@ -1,4 +1,4 @@
-package br.com.digix.api.services;
+package br.com.digix.api.dominio.jogador;
 
 import br.com.digix.api.dominio.jogador.Jogador;
 import br.com.digix.api.dominio.jogador.JogadorRepository;

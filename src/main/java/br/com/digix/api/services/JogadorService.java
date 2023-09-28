@@ -2,6 +2,7 @@ package br.com.digix.api.services;
 
 import br.com.digix.api.dominio.jogador.Jogador;
 import br.com.digix.api.dominio.jogador.JogadorRepository;
+import br.com.digix.api.dominio.jogador.ValidarJogador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

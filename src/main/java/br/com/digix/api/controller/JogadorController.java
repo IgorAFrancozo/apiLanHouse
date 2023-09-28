@@ -22,7 +22,7 @@ public class JogadorController {
 
     @GetMapping
     public ResponseEntity<Page<DadosListagemJogador>> listarJogadores(Pageable pageable) {
-        Page<Jogador> page = jogadorService.listar(pageable);
+        var page = jogadorService.listar(pageable);
         Page<DadosListagemJogador> dadosPage = page.map(DadosListagemJogador::new);
         return ResponseEntity.ok(dadosPage);
     }
