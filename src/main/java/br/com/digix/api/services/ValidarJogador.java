@@ -17,7 +17,8 @@ public class ValidarJogador {
     }
 
     public boolean validarIdade(Jogador jogador) {
-        return jogador.getIdadeDoJogador() > 14;
+        var idadeLimite = 14;
+        return jogador.getIdadeDoJogador() > idadeLimite;
     }
 
     public boolean validarNicknameUnico(Jogador novoJogador) {
