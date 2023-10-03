@@ -17,9 +17,7 @@ public class Inscricao {
     @ManyToOne
     @JoinColumn(name = "partida_id")
     private Partida partida;
-
     @ManyToOne
     @JoinColumn(name = "jogador_id")
     private Jogador jogador;
-
 }
