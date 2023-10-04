@@ -32,14 +32,10 @@ public class AgendaDeInscricao {
         validadores.forEach(v -> v.validar(dados));
 
         var jogador = jogadorRepository.getReferenceById(dados.idJogador());
-        var medico = escolherMedico(dados);
-        if (medico == null) {
-            throw new ValidacaoException("Não existe médico disponível nessa data!");
-        }
 
-        var consulta = new Consulta(null, medico, paciente, dados.data(), null);
-        consultaRepository.save(consulta);
+        var inscricao = new Inscricao();
+        inscricaoRepository.save(inscricao);
 
-        return new DadosDetalhamentoConsulta(consulta);
+        return new DadosDetalhesInscricao(incricao);
     }
 }
