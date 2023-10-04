@@ -19,7 +19,8 @@ public class ValidarNicknameJogador implements ValidadorInscricao {
     }
 
     public void validar(DadosAgendamentoInscricao dados) {
-        var jogadorExistente = jogadorRepository.findByNickname(dados.getNickname());
+        var jogadorExistente = jogadorRepository.findAtivoById(dados.idJogador());
+
         return jogadorExistente.isEmpty();
     }
 }
