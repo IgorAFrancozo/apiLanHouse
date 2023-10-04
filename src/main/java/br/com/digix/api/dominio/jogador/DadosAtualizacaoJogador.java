@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
-public record DadosDetalhesJogador(
+public record DadosAtualizacaoJogador(
         @NotNull
         Long id,
         String nome,
@@ -12,7 +12,4 @@ public record DadosDetalhesJogador(
         String nickname,
         String email
 ) {
-    public DadosDetalhesJogador(Jogador jogador) {
-        this(jogador.getId(), jogador.getNome(), jogador.getDataNascimento(), jogador.getNickname(), jogador.getEmail());
-    }
 }

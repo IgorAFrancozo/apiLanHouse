@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Table(name = "inscricoes")
 @Entity(name = "Inscricao")
@@ -20,4 +22,14 @@ public class Inscricao {
     @ManyToOne
     @JoinColumn(name = "jogador_id")
     private Jogador jogador;
+
+    private LocalDateTime data;
+
+    @Column(name = "motivo_cancelamento")
+    @Enumerated(EnumType.STRING)
+    private MotivoCancelamento motivoCancelamento;
+
+    public void cancelar(MotivoCancelamento motivo) {
+        this.motivoCancelamento = motivo;
+    }
 }

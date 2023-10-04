@@ -3,5 +3,6 @@ CREATE TABLE IF NOT EXISTS jogadores (
     nome VARCHAR(255) NOT NULL,
     dataNascimento DATE NOT NULL,
     nickname VARCHAR(255) UNIQUE NOT NULL,
-    email VARCHAR(255) NOT NULL
+    email VARCHAR(255) NOT NULL,
+    ativo BOOLEAN NOT NULL DEFAULT TRUE
 );
