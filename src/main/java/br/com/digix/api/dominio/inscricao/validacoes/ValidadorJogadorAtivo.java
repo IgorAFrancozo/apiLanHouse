@@ -11,6 +11,7 @@ public class ValidadorJogadorAtivo implements ValidadorInscricao {
     @Autowired
     private JogadorRepository jogadorRepository;
 
+    @Override
     public void validar(DadosAgendamentoInscricao dados) {
         var jogadorEstaAtivo = jogadorRepository.findAtivoById(dados.idJogador());
         if (!jogadorEstaAtivo) {

@@ -23,11 +23,17 @@ public class Inscricao {
     @JoinColumn(name = "jogador_id")
     private Jogador jogador;
 
-    private LocalDateTime data;
+    private LocalDateTime dataInscricao;
 
     @Column(name = "motivo_cancelamento")
     @Enumerated(EnumType.STRING)
     private MotivoCancelamento motivoCancelamento;
+
+    public Inscricao(Partida partida, Jogador jogador, LocalDateTime dataInscricao) {
+        this.partida = partida;
+        this.jogador = jogador;
+        this.dataInscricao = dataInscricao;
+    }
 
     public void cancelar(MotivoCancelamento motivo) {
         this.motivoCancelamento = motivo;

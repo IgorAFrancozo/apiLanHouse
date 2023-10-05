@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 public record DadosAgendamentoInscricao(
         Long idJogo,
         Long idJogador,
+        Long idPartida,
         @NotNull
         @Future
         LocalDateTime data

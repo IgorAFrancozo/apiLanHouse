@@ -9,8 +9,8 @@ import java.util.Optional;
 
 public interface JogadorRepository extends JpaRepository<Jogador, Long> {
     Page<Jogador> findAllByAtivoTrue(Pageable pageable);
-
-    Optional<Jogador> findByNickname(String nickname);
+    Optional<Jogador> existsByNicknameAndDataInscricao();
+    Optional<Jogador> findAtivoByNickname(String nickname);
 
     @Query("""
             select j.ativo

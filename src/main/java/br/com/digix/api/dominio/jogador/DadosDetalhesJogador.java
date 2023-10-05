@@ -15,4 +15,7 @@ public record DadosDetalhesJogador(
         @NotBlank
         String email
 ) {
+    public DadosDetalhesJogador(Jogador jogador) {
+        this(jogador.getNome(), jogador.getDataNascimento(), jogador.getNickname(), jogador.getEmail());
+    }
 }
