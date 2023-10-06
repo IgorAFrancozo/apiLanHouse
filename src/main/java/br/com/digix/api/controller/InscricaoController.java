@@ -3,7 +3,7 @@ package br.com.digix.api.controller;
 import br.com.digix.api.dominio.inscricao.DadosAgendamentoInscricao;
 import br.com.digix.api.dominio.inscricao.DadosCancelamentoInscricao;
 import br.com.digix.api.dominio.inscricao.DadosDetalhesInscricao;
-import br.com.digix.api.dominio.inscricao.InscricaoPartidaService;
+import br.com.digix.api.dominio.inscricao.InscricaoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/inscricoes")
 public class InscricaoController {
     @Autowired
-    private InscricaoPartidaService inscricaoPartidaService;
+    private InscricaoService inscricaoPartidaService;
 
     @PostMapping("/inscrever")
     public ResponseEntity<DadosDetalhesInscricao> inscreverParaPartida(@RequestBody @Valid DadosAgendamentoInscricao dados) {

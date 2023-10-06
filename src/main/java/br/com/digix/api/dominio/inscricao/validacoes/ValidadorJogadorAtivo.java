@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ValidadorJogadorAtivo implements ValidadorInscricao {
+
     @Autowired
     private JogadorRepository jogadorRepository;
 

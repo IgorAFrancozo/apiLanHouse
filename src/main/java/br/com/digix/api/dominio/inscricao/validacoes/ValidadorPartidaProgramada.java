@@ -5,8 +5,11 @@ import br.com.digix.api.dominio.inscricao.DadosAgendamentoInscricao;
 import br.com.digix.api.dominio.partida.PartidaRepository;
 import br.com.digix.api.dominio.partida.StatusPartida;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ValidadorPartidaProgramada implements ValidadorInscricao {
+
     @Autowired
     private PartidaRepository partidaRepository;
 

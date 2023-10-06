@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class InscricaoPartidaService {
+public class InscricaoService {
     @Autowired
     private InscricaoRepository inscricaoRepository;
     @Autowired
