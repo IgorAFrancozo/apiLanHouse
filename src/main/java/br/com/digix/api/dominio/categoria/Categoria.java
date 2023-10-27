@@ -1,4 +1,4 @@
-package br.com.digix.api.dominio.jogo;
+package br.com.digix.api.dominio.categoria;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,20 +7,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@Table(name = "jogos")
-@Entity(name = "Jogo")
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "categorias")
+@Entity(name = "Categoria")
 @EqualsAndHashCode(of = "id")
-public class Jogo {
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String categoria;
+    private String abreviacao;
 
-//    @ManyToOne
-//    @JoinColumn(name = "categoria_id", nullable = false)
-//    private Categoria categoria;
-    private String fornecedor;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setAbreviacao(String abreviacao) {
+        this.abreviacao = abreviacao;
+    }
 }
